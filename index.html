@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diogo Almeida | Game AI Specialist</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -105,10 +106,17 @@
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.6s ease forwards;
+      position: relative;
     }
 
     .card.expanded {
+      flex: 1 1 100%;
       background-color: #1f3954;
+      z-index: 10;
+    }
+
+    .card.hidden-card {
+      display: none;
     }
 
     .card img {
@@ -145,16 +153,63 @@
       color: #cccccc;
     }
 
-    .card .details {
+    .details {
       display: none;
-      margin-top: 0.5rem;
-      color: #aaa;
-      font-size: 0.95rem;
+      margin-top: 1rem;
+      color: #cccccc;
     }
 
     .card.expanded .details {
       display: block;
       animation: fadeIn 0.3s ease;
+    }
+
+    .carousel {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    .carousel img {
+      width: 200px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .infographic {
+      margin-top: 1rem;
+      background: #0d2235;
+      padding: 1rem;
+      border-radius: 6px;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .infographic div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .infographic i {
+      font-size: 2rem;
+      color: #70b7ff;
+    }
+
+    .progress-bar {
+      background: #222;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar-inner {
+      height: 8px;
+      background: #70b7ff;
+      width: 0%;
+      transition: width 0.8s ease;
     }
 
     .hidden {
@@ -221,55 +276,59 @@
         <img src="https://via.placeholder.com/300x180.png?text=Game+X" alt="Game X Screenshot">
         <h3>Game X (2024)</h3>
         <p>Lead developer on a 3D multiplayer puzzle game for PC and VR.</p>
-        <a href="https://example.com/game-x" target="_blank">View Project</a>
+        <a href="#">View Project</a>
         <div class="details">
-          <p><strong>Technologies:</strong> Unity, Photon, VR Toolkit</p>
-          <p><strong>Role:</strong> Lead Developer</p>
-          <p><strong>Description:</strong> Developed core game mechanics, AI puzzles, and VR integration.</p>
+          <div class="carousel">
+            <img src="https://via.placeholder.com/200x120.png?text=Screenshot+1" />
+            <img src="https://via.placeholder.com/200x120.png?text=Screenshot+2" />
+            <img src="https://via.placeholder.com/200x120.png?text=Screenshot+3" />
+          </div>
+          <div class="infographic">
+            <div>
+              <i class="fas fa-cogs"></i>
+              <p>AI Systems</p>
+              <div class="progress-bar"><div class="progress-bar-inner" style="width: 90%;"></div></div>
+            </div>
+            <div>
+              <i class="fas fa-vr-cardboard"></i>
+              <p>VR Support</p>
+              <div class="progress-bar"><div class="progress-bar-inner" style="width: 70%;"></div></div>
+            </div>
+            <div>
+              <i class="fas fa-network-wired"></i>
+              <p>Multiplayer</p>
+              <div class="progress-bar"><div class="progress-bar-inner" style="width: 85%;"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card project-card" data-category="commercial" onclick="toggleDetails(this)">
-        <img src="https://via.placeholder.com/300x180.png?text=Mobile+Title" alt="Mobile Title Screenshot">
-        <h3>Mobile Adventure</h3>
-        <p>Gameplay programming and UI integration for a published mobile game.</p>
-        <a href="https://example.com/mobile-adventure" target="_blank">View Project</a>
+      <!-- Novo Card Exemplo -->
+      <div class="card project-card" data-category="ai" onclick="toggleDetails(this)">
+        <img src="https://via.placeholder.com/300x180.png?text=Bot+Arena" alt="Bot Arena Screenshot">
+        <h3>Bot Arena</h3>
+        <p>Training AI bots using Unity ML-Agents in arena combat simulations.</p>
+        <a href="#">View Project</a>
         <div class="details">
-          <p><strong>Technologies:</strong> Unity, Firebase, Android SDK</p>
-          <p><strong>Role:</strong> Gameplay Programmer</p>
-          <p><strong>Description:</strong> Implemented combat logic, UI navigation, and analytics tools.</p>
+          <div class="carousel">
+            <img src="https://via.placeholder.com/200x120.png?text=Combat+1" />
+            <img src="https://via.placeholder.com/200x120.png?text=Combat+2" />
+          </div>
+          <div class="infographic">
+            <div>
+              <i class="fas fa-brain"></i>
+              <p>Reinforcement Learning</p>
+              <div class="progress-bar"><div class="progress-bar-inner" style="width: 95%;"></div></div>
+            </div>
+            <div>
+              <i class="fas fa-dice-d20"></i>
+              <p>Decision Making</p>
+              <div class="progress-bar"><div class="progress-bar-inner" style="width: 80%;"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card project-card" data-category="general" onclick="toggleDetails(this)">
-        <h3>Personal / Academic Projects</h3>
-        <p>Generalist projects for learning and experimentation</p>
-        <div class="details">
-          <p><strong>Examples:</strong> Procedural generation demos, game jam entries, shader experiments.</p>
-        </div>
-      </div>
-
-      <div class="card project-card" data-category="ai" onclick="toggleDetails(this)">
-        <h3>Finite State Machine (FSM)</h3>
-        <p>Creating AI with state transitions</p>
-        <div class="details">
-          <p><strong>Description:</strong> Patrol, chase, and attack logic for enemy NPCs.</p>
-        </div>
-      </div>
-      <div class="card project-card" data-category="ai" onclick="toggleDetails(this)">
-        <h3>Utility-Based AI</h3>
-        <p>AI that makes decisions using utility scores</p>
-        <div class="details">
-          <p><strong>Description:</strong> Dynamic behavior for NPCs balancing hunger, fear, and curiosity.</p>
-        </div>
-      </div>
-      <div class="card project-card" data-category="ai" onclick="toggleDetails(this)">
-        <h3>Reinforcement Learning</h3>
-        <p>Training AI agents with machine learning</p>
-        <div class="details">
-          <p><strong>Description:</strong> Used ML-Agents to train a creature to navigate obstacles for rewards.</p>
-        </div>
-      </div>
     </div>
 
     <h2 class="section-title" id="contact">Contact</h2>
@@ -294,7 +353,23 @@
     }
 
     function toggleDetails(card) {
-      card.classList.toggle('expanded');
+      const allCards = document.querySelectorAll('.project-card');
+      const isExpanding = !card.classList.contains('expanded');
+
+      allCards.forEach(c => {
+        if (c !== card) {
+          c.classList.add('hidden-card');
+          c.classList.remove('expanded');
+        }
+      });
+
+      if (isExpanding) {
+        card.classList.add('expanded');
+        card.classList.remove('hidden-card');
+      } else {
+        allCards.forEach(c => c.classList.remove('hidden-card'));
+        card.classList.remove('expanded');
+      }
     }
   </script>
 </body>
