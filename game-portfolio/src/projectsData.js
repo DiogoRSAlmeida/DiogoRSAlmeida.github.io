@@ -18,7 +18,7 @@ export const projects = [
     id: "Fazendinha-02",
     title: "Fazendinha",
     category: "Comercial",
-    image: "/Images/NDA.png",
+    image: "/Images/MobileFarm.png",
     description: "Um jogo 3D mobile de gestão de fazenda.",
     link: "#",
     carousel: ["/Images/NDA.png", "/Images/NDA.png"],
