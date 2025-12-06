@@ -52,5 +52,18 @@ export const projects = [
       { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 88 },
       { icon: "fas fa-dice-d20", label: "Decision Making", progress: 78 }
     ]
+  },
+  {
+    id: "Cooperativismo roblox",
+    title: "Cooperativismo roblox",
+    category: "Comercial",
+    image: "/Images/N.png",
+    description: "um jogo feito na plataforma roblox para fomentar o cooperativismo",
+    link: "#",
+    carousel: ["/Images/NDA.png", "/Images/NDA.png"],
+    infographic: [
+      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 88 },
+      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 78 }
+    ]
   }
 ];
