@@ -159,34 +159,21 @@ body {
   width: 200px;
   border-radius: 6px;
 }
-.infographic {
-  margin-top: 1rem;
-  background: #0d2235;
-  padding: 1rem;
-  border-radius: 6px;
+.tags {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
-.infographic div {
-  flex: 1;
-  text-align: center;
-}
-.infographic i {
-  font-size: 2rem;
+.tags li {
+  background: #0d2235;
+  border: 1px solid #70b7ff;
   color: #70b7ff;
-}
-.progress-bar {
-  background: #222;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 0.5rem;
-}
-.progress-bar-inner {
-  height: 8px;
-  background: #70b7ff;
-  width: 0%;
-  transition: width 0.8s ease;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 @keyframes fadeSlideIn {
   0% {
@@ -461,4 +448,92 @@ html {
 .contact-card p {
   font-size: 0.95rem;
   color: #bbb;
+}
+
+.nda-notice {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px dashed #70b7ff;
+  border-radius: 8px;
+  color: #9fb4cc;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.25rem;
+}
+.lang-switch button {
+  background: transparent;
+  border: 1px solid #70b7ff;
+  color: #70b7ff;
+  padding: 0.15rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.lang-switch button.active,
+.lang-switch button:hover {
+  background: #70b7ff;
+  color: #0b1623;
+}
+
+/* ===== FUNDO DO CENÁRIO ===== */
+html {
+  background: #070e18;
+}
+body,
+#root {
+  background: transparent;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 15% 10%, rgba(112, 183, 255, 0.16), transparent 60%),
+    radial-gradient(50rem 40rem at 90% 40%, rgba(120, 90, 255, 0.12), transparent 60%),
+    radial-gradient(45rem 35rem at 30% 95%, rgba(60, 200, 190, 0.08), transparent 60%),
+    linear-gradient(180deg, #0b1623 0%, #070e18 100%);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(112, 183, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 183, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
+}
+.about-section {
+  background: rgba(10, 20, 34, 0.55);
+  border-top: 1px solid rgba(112, 183, 255, 0.12);
+}
+.contact-section {
+  background: rgba(5, 10, 18, 0.7);
+  border-top: 1px solid rgba(112, 183, 255, 0.12);
+}
+.skills li {
+  background: rgba(112, 183, 255, 0.08);
+  border-color: rgba(112, 183, 255, 0.25);
+}
+.card {
+  background: rgba(24, 40, 58, 0.85);
+  backdrop-filter: blur(4px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: bgGlow 18s ease-in-out infinite alternate;
+  }
+}
+@keyframes bgGlow {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(25deg); }
 }

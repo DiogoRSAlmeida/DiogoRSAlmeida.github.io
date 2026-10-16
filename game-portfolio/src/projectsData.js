@@ -2,55 +2,38 @@
 export const projects = [
   {
     id: "FracturedEgo-01",
-    title: "Fractured Ego",
-    category: "Personal",
-    image: "/Images/project1.png",
-    description: "Um jogo de terror 3d investigativo",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/NDA.png", "/Images/NDA.png"],
-    infographic: [
-      { icon: "fas fa-cogs", label: "AI Systems", progress: 90 },
-      { icon: "fas fa-vr-cardboard", label: "VR Support", progress: 70 },
-      { icon: "fas fa-network-wired", label: "Multiplayer", progress: 85 }
-    ]
+    title: { pt: "Fractured Ego", en: "Fractured Ego" },
+    category: "personal",
+    image: "/Images/project1.webp",
+    description: { pt: "Um jogo de terror 3D investigativo.", en: "An investigative 3D horror game." },
+    carousel: ["/Images/NDA.webp", "/Images/NDA.webp", "/Images/NDA.webp"],
+    tags: { pt: ["Unity", "C#", "3D", "Terror", "Investigação"], en: ["Unity", "C#", "3D", "Horror", "Investigation"] }
   },
   {
     id: "Fazendinha-02",
-    title: "Fazendinha",
-    category: "Comercial",
-    image: "/Images/MobileFarm.png",
-    description: "Um jogo 3D mobile de gestão de fazenda.",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/NDA.png"],
-    infographic: [
-      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 95 },
-      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 80 }
-    ]
+    title: { pt: "Fazendinha", en: "Fazendinha" },
+    category: "commercial",
+    image: "/Images/MobileFarm.webp",
+    description: { pt: "Um jogo 3D mobile de gestão de fazenda.", en: "A 3D mobile farm management game." },
+    carousel: [],
+    tags: { pt: ["Unity", "C#", "3D", "Mobile", "Gestão"], en: ["Unity", "C#", "3D", "Mobile", "Management"] }
   },
   {
-    id: "Plantação",
-    title: "Plantação VR",
-    category: "Comercial",
-    image: "/Images/VRfarm.png",
-    description: "Um jogo vr sobre cuidado com o solo para plantação",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/NDA.png"],
-    infographic: [
-      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 90 },
-      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 75 }
-    ]
+    id: "plantacao-vr-03",
+    title: { pt: "Plantação VR", en: "Crop Farming VR" },
+    category: "commercial",
+    image: "/Images/VRfarm.webp",
+    description: { pt: "Um jogo VR sobre cuidado com o solo para plantação.", en: "A VR game about soil care for crop farming." },
+    carousel: [],
+    tags: { pt: ["Unity", "C#", "VR", "Educacional"], en: ["Unity", "C#", "VR", "Educational"] }
   },
   {
-    id: "Transformaçao digital",
-    title: "Transformaçao digital",
-    category: "Comercial",
-    image: "/Images/projectAmongUs.png",
-    description: "um jogo 2D isometrico webgl multi player sobre transformaçao digital",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/projectAmongUs.png"],
-    infographic: [
-      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 88 },
-      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 78 }
-    ]
+    id: "transformacao-digital-04",
+    title: { pt: "Transformação Digital", en: "Digital Transformation" },
+    category: "commercial",
+    image: "/Images/projectAmongUs.webp",
+    description: { pt: "Um jogo 2D isométrico WebGL multiplayer sobre transformação digital.", en: "A 2D isometric multiplayer WebGL game about digital transformation." },
+    carousel: [],
+    tags: { pt: ["Unity", "C#", "2D Isométrico", "WebGL", "Multiplayer"], en: ["Unity", "C#", "2D Isometric", "WebGL", "Multiplayer"] }
   }
 ];

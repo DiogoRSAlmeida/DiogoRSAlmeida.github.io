@@ -1,5 +1,10 @@
 // ProjectCard.jsx
+import { useLang } from "./LanguageContext";
+import { translations } from "./translations";
+
 export default function ProjectCard({ project, expanded, onToggle }) {
+  const { lang } = useLang();
+  const title = project.title[lang];
   return (
     <div
       className={`card project-card ${expanded ? "expanded" : ""}`}
@@ -11,33 +16,29 @@ export default function ProjectCard({ project, expanded, onToggle }) {
         if (e.key === "Enter" || e.key === " ") onToggle();
       }}
     >
-      <img src={project.image} alt={`${project.title} Screenshot`} />
-      <h3>{project.title}</h3>
-      <p>{project.description}</p>
-      <a href={project.link} onClick={(e) => e.stopPropagation()}>View Project</a>
+      <img src={project.image} alt={`${title} Screenshot`} loading="lazy" />
+      <h3>{title}</h3>
+      <p>{project.description[lang]}</p>
 
       {expanded && (
         <div className="details">
-          <div className="carousel">
-            {project.carousel.map((img, i) => (
-              <img key={i} src={img} alt={`Slide ${i + 1}`} />
-            ))}
-          </div>
+          {project.carousel.length > 0 ? (
+            <div className="carousel">
+              {project.carousel.map((img, i) => (
+                <img key={i} src={img} alt={`${title} - ${lang === "pt" ? "imagem" : "image"} ${i + 1}`} loading="lazy" />
+              ))}
+            </div>
+          ) : (
+            <p className="nda-notice">
+              {translations[lang].projects.nda}
+            </p>
+          )}
 
-          <div className="infographic">
-            {project.infographic.map((info, i) => (
-              <div key={i}>
-                <i className={info.icon}></i>
-                <p>{info.label}</p>
-                <div className="progress-bar">
-                  <div
-                    className="progress-bar-inner"
-                    style={{ width: `${info.progress}%` }}
-                  />
-                </div>
-              </div>
+          <ul className="tags">
+            {project.tags[lang].map((tag) => (
+              <li key={tag}>{tag}</li>
             ))}
-          </div>
+          </ul>
         </div>
       )}
     </div>

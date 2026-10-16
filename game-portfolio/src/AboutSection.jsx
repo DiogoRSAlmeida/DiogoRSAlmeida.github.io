@@ -1,32 +1,26 @@
 // AboutSection.jsx
+import { useLang } from "./LanguageContext";
+import { translations } from "./translations";
+
+// Itens de índice ímpar do array são destacados em <strong>
+const renderRich = (parts) =>
+  parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part));
+
 export default function AboutSection() {
+  const { lang } = useLang();
+  const t = translations[lang].about;
+
   return (
     <section id="about" className="about-section">
       <div className="about-content">
-        <h2 className="section-title">Sobre Mim</h2>
-        <p>
-          Olá! Meu nome é <strong>Diogo Almeida</strong> — sou um 
-          desenvolvedor de jogos apaixonado por criar experiências imersivas e 
-          inteligentes. Tenho trabalhado com <strong>Unity</strong> como minha engine principal, 
-          explorando desde sistemas de <strong>IA</strong> e <strong>geração procedural</strong> até 
-          projetos com <strong>realidade aumentada (AR)</strong> e <strong>multiplayer</strong>.
-        </p>
+        <h2 className="section-title">{t.title}</h2>
 
-        <p>
-          Atualmente, estou me especializando em <strong>Inteligência Artificial para Jogos</strong> 
-          e adoro projetar sistemas que unem tecnologia e criatividade — seja 
-          criando mundos dinâmicos, NPCs inteligentes ou ferramentas de suporte 
-          ao design de gameplay.
-        </p>
-
-        <p>
-          Fora do código, sou curioso, analítico e adoro desafios técnicos que me 
-          fazem aprender algo novo. Meu objetivo é contribuir em equipes criativas 
-          que usam tecnologia para expandir os limites da jogabilidade.
-        </p>
+        <p>{renderRich(t.p1)}</p>
+        <p>{renderRich(t.p2)}</p>
+        <p>{t.p3}</p>
 
         <div className="skills">
-          <h3>Principais Tecnologias</h3>
+          <h3>{t.skillsTitle}</h3>
           <ul>
             <li>Unity (C#)</li>
             <li>AR Foundation</li>

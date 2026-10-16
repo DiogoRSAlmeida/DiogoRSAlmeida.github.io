@@ -1,23 +1,24 @@
 // ContactSection.jsx
+import { useLang } from "./LanguageContext";
+import { translations } from "./translations";
+
 export default function ContactSection() {
+  const { lang } = useLang();
+  const t = translations[lang].contact;
+
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
-        <h2 className="section-title">Contato</h2>
-        <p className="contact-intro">
-          Está interessado em colaborar, discutir ideias de jogos, ou quer saber mais sobre meu trabalho?
-          Entre em contato — será um prazer conversar!
-        </p>
+        <h2 className="section-title">{t.title}</h2>
+        <p className="contact-intro">{t.intro}</p>
 
         <div className="contact-methods">
           <a
             href="mailto:diogo2010rs@gmail.com"
             className="contact-card"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <i className="fas fa-envelope"></i>
-            <span>Email</span>
+            <span>{t.email}</span>
             <p>diogo2010rs@gmail.com</p>
           </a>
 
@@ -29,7 +30,7 @@ export default function ContactSection() {
           >
             <i className="fab fa-linkedin"></i>
             <span>LinkedIn</span>
-            <p>/in/diogoalmeida</p>
+            <p>/in/diogo-almeida</p>
           </a>
 
           <a
@@ -40,7 +41,7 @@ export default function ContactSection() {
           >
             <i className="fab fa-github"></i>
             <span>GitHub</span>
-            <p>@diogoalmeida</p>
+            <p>@DiogoRSAlmeida</p>
           </a>
         </div>
       </div>

@@ -1,6 +1,13 @@
 // FilterButtons.jsx
-export default function FilterButtons({ filter, setFilter }) {
-  const categories = ["all", "commercial", "general", "ai", "personal"];
+import { useLang } from "./LanguageContext";
+import { translations } from "./translations";
+
+export default function FilterButtons({ filter, setFilter, available }) {
+  const { lang } = useLang();
+  const labels = translations[lang].filters;
+  const categories = ["all", "commercial", "general", "ai", "personal"].filter(
+    (cat) => cat === "all" || available.includes(cat)
+  );
 
   return (
     <div className="filter-buttons">
@@ -10,7 +17,7 @@ export default function FilterButtons({ filter, setFilter }) {
           className={filter === cat ? "active" : ""}
           onClick={() => setFilter(cat)}
         >
-          {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          {labels[cat]}
         </button>
       ))}
     </div>

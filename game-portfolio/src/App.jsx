@@ -9,14 +9,23 @@ import UnityBanner from "./UnityBanner";
 import AboutSection from "./AboutSection";
 
 import ContactSection from "./ContactSection";
+import { useLang } from "./LanguageContext";
+import { translations } from "./translations";
 
 export default function App() {
+  const { lang } = useLang();
+  const t = translations[lang].projects;
   const [filter, setFilter] = useState("all");
   const [expandedId, setExpandedId] = useState(null);
 
   const filteredProjects = projects.filter(
     (p) => filter === "all" || p.category === filter
   );
+
+  const handleFilter = (cat) => {
+    setFilter(cat);
+    setExpandedId(null);
+  };
 
   const handleExpand = (id) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -35,15 +44,16 @@ export default function App() {
       <UnityBanner  />
   <AboutSection />
 <div className="container">
-  <h2 id="projects" className="section-title">Projects</h2>
+  <h2 id="projects" className="section-title">{t.title}</h2>
 
   {/* Texto introdutório sobre os projetos */}
-  <p className="projects-intro">
-    Aqui você encontra alguns dos projetos em que trabalhei, incluindo jogos, protótipos de estudo e experiências com Inteligência Artificial. 
-    Explore cada um para ver detalhes e aprender sobre meu processo de desenvolvimento.
-  </p>
+  <p className="projects-intro">{t.intro}</p>
 
-  <FilterButtons filter={filter} setFilter={setFilter} />
+  <FilterButtons
+    filter={filter}
+    setFilter={handleFilter}
+    available={projects.map((p) => p.category)}
+  />
 
   <div className="cards">
     {visibleProjects.map((proj) => (

@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+/* global createUnityInstance */
+import { useEffect, useRef } from "react";
 
 export default function UnityBanner() {
   const unityContainerRef = useRef(null);
@@ -7,7 +8,8 @@ export default function UnityBanner() {
 
   useEffect(() => {
     // Flag para evitar múltiplas execuções se o componente for montado/desmontado rapidamente
-    let isMounted = true; 
+    let isMounted = true;
+    const container = unityContainerRef.current;
     
     const script = document.createElement("script");
     script.src = "/unity-build/Build/MicroGameWebgl.loader.js";
@@ -68,8 +70,8 @@ export default function UnityBanner() {
       document.body.removeChild(script);
 
       // 3. Limpa o conteúdo do container
-      if (unityContainerRef.current) {
-        unityContainerRef.current.innerHTML = "";
+      if (container) {
+        container.innerHTML = "";
       }
     };
   }, []); // O array vazio garante que o useEffect rode apenas na montagem/desmontagem
