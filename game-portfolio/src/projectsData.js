@@ -28,29 +28,21 @@ export const projects = [
     tags: { pt: ["Unity", "C#", "VR", "Educacional"], en: ["Unity", "C#", "VR", "Educational"] }
   },
   {
-    id: "Transformaçao digital",
-    title: "Transformaçao digital",
-    category: "Comercial",
-    image: "/Images/projectAmongUs.png",
-    description: "um jogo 2D isometrico webgl multi player sobre transformaçao digital",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/projectAmongUs.png"],
-    infographic: [
-      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 88 },
-      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 78 }
-    ]
+    id: "transformacao-digital-04",
+    title: { pt: "Transformação Digital", en: "Digital Transformation" },
+    category: "commercial",
+    image: "/Images/projectAmongUs.webp",
+    description: { pt: "Um jogo 2D isométrico WebGL multiplayer sobre transformação digital.", en: "A 2D isometric multiplayer WebGL game about digital transformation." },
+    carousel: [],
+    tags: { pt: ["Unity", "C#", "2D Isométrico", "WebGL", "Multiplayer"], en: ["Unity", "C#", "2D Isometric", "WebGL", "Multiplayer"] }
   },
   {
-    id: "Cooperativismo roblox",
-    title: "Cooperativismo roblox",
-    category: "Comercial",
-    image: "/Images/N.png",
-    description: "um jogo feito na plataforma roblox para fomentar o cooperativismo",
-    link: "#",
-    carousel: ["/Images/NDA.png", "/Images/NDA.png"],
-    infographic: [
-      { icon: "fas fa-brain", label: "Reinforcement Learning", progress: 88 },
-      { icon: "fas fa-dice-d20", label: "Decision Making", progress: 78 }
-    ]
+    id: "cooperativismo-roblox-05",
+    title: { pt: "Cooperativismo Roblox", en: "Roblox Cooperativism" },
+    category: "commercial",
+    image: "/Images/NDA.webp",
+    description: { pt: "Um jogo feito na plataforma Roblox para fomentar o cooperativismo.", en: "A game built on the Roblox platform to promote cooperativism." },
+    carousel: [],
+    tags: { pt: ["Roblox", "Cooperativismo"], en: ["Roblox", "Cooperativism"] }
   }
 ];
